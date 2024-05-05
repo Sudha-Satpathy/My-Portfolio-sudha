@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript">
+        function AmountChange(){
+            document.getElementById("txtAmount").value = document.getElementById("amountSlider").value;
+        }
+        function YearChange(){
+            document.getElementById("txtYears").value = document.getElementById("yearSlider").value;
+        }
+        function RateChange(){
+            document.getElementById("txtRate").value = document.getElementById("rateSlider").value;
+        }
+        function CalculateClick(){
+            var P = parseInt(document.getElementById("txtAmount").value);
+            var N = parseInt(document.getElementById("txtYears").value) * 12;
+            var R  = parseFloat(document.getElementById("txtRate").value)/12/100;
+            /*
+                P x R x (1+R)^N / [(1+R)^N-1] where,
+                N is 10 years or 120 months
+                R is 7.2% = 7.2/12/100 = 0.006
+                EMI = Rs 10,00,000 * 0.006 * (1 + 0.006)120 / ((1 + 0.006)120 – 1) = Rs 11,714.
+            */
+            var EMI = P * R * (Math.pow(1+R),N) / (Math.pow(1+R),N) - 1;
+            document.getElementById("lblResult").innerHTML = "Monthly Installment : " + Math.round(EMI).toLocaleString('en-in',{style:'currency', currency:'INR'});
+        }
+    </script>
+</head>
+<body class="container-fluid bg-dark text-white">
+    <h1 class="text-center pt-5">Personal Loan EMI Calculator</h1>
+    <div class="bg-light text-dark p-4 m-4">
+        <div class="row">
+            <div class="col">
+                Amount you need &#8377; <input type="text" id="txtAmount">
+            </div>
+            <div class="col">
+                for <input type="text" size="4" id="txtYears"> Years
+            </div>
+            <div class="col">
+                Interest rate <input type="text" size="4" id="txtRate"> %
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">
+              &#8377; 1000000 <input id="amountSlider" onchange="AmountChange()" type="range" min="1000000" value="1000000" max="3000000"> &#8377; 3000000
+            </div>
+            <div class="col">
+                1 <input type="range" id="yearSlider" onchange="YearChange()" min="1" max="5" value="1"> 5
+            </div>
+            <div class="col">
+                10.25% <input type="range" id="rateSlider" onchange="RateChange()" min="10.25" max="18.25" value="10.25" step="0.01"> 18.25%
+            </div>
+        </div>
+        <div class="mt-4 row">
+            <div class="col text-end">
+                <button onclick="CalculateClick()" class="btn btn-primary">Calculate</button>
+            </div>
+        </div>
+        <div class="mt-4">
+            <span class="h3" id="lblResult"></span>
+        </div>
+    </div>
+</body>
+</html>

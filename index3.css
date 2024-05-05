@@ -1,0 +1,265 @@
+
+#homeNav a{
+    color: white;
+    text-decoration: none;
+}
+
+#home{
+   /* background-image: url("../public/images/bodybg1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 70vh;
+    margin-top: 50px;
+    border-top: 5px ridge rgb(34, 72, 177);
+    border-left: 5px ridge rgb(34, 72, 177);
+    box-shadow: 3px 3px 10px rgba(154, 155, 158, 0.795);*/
+    background-color: black;
+    color: white;
+    margin-top: 170px;
+}
+#about{
+    /*background: linear-gradient(to top,rgb(190, 225, 245), white);*/
+   /* background-image: url("../public/images/whiteOrange1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;*/
+    margin-top: 350px;
+    margin-bottom: 100px;
+    padding-left: 10px;
+    padding-right: -10px;
+   /* border-right: 5px ridge orange;
+    border-bottom: 5px ridge orange;
+    box-shadow: 3px 3px 30px rgb(238, 141, 30);*/
+    color: white;
+}
+#resume{
+    /*background: linear-gradient(to top, white,rgb(236, 179, 141));*/
+    padding: 10px;
+    margin-bottom: 100px;
+    /*background-image: url("../public/images/whitePink1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;*/
+    margin-top: 100px;
+    padding-left: 10px;
+    padding-right: -10px;
+    color: white;
+    /*border-top: 5px ridge rgb(223, 3, 124);
+    border-left: 5px ridge rgb(223, 3, 124);
+    box-shadow: 3px 3px 30px rgb(223, 3, 124);*/
+}
+#work{
+   /* background: linear-gradient(to top,rgb(190, 225, 245), white);*/
+    padding: 10px;
+}
+#contact{
+    /*background: linear-gradient(to top, white,rgb(190, 225, 245));*/
+    padding: 10px;
+}
+body{
+   /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /*background-image: url("../public/images/bodybg1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;*/
+    background-color: black;
+}
+
+#profileSection{
+    background-image: url("../public/images/sudha4.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;  
+    height: 280px;
+    width: 300px;
+    box-shadow: 10px 10px 10px black;
+   }
+   #profileContainer{
+    width: 300px;
+    height: 300px;
+   /* background-color: rgba(248, 237, 217, 0.445);
+    border: 2px solid white;*/
+    box-shadow: -3px -3px 10px greenyellow;
+    padding: 40px;
+    margin-bottom: 60px;
+    border-radius: 10px;
+   }
+   #aboutContainer{
+    color:white; 
+    /*box-shadow: 3px 3px 50px rgb(238, 141, 30);*/
+    background-color:black;
+    width: 100%;
+    height: 290px;
+    margin-right: 100px;
+    padding: 20px;
+    border-radius: 10px;
+   }
+header{
+    /*background: linear-gradient(to right,rgb(29, 108, 133),rgb(48, 147, 177));
+    border-radius: 100px;
+    box-shadow: 2px 2px 15px rgb(99, 98, 97);*/
+    color: white;
+}
+#section-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 120px;
+    margin-bottom: 50px;
+}
+#section-2{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#section-2 span{
+    color: rgb(42, 42, 124);
+    text-shadow: 2px 2px 5px rgb(99, 98, 98);
+}
+#myName{
+    font-size: 100px;
+    font-weight: bold;
+}
+
+#anime-text span{
+    position: relative;
+}
+
+#anime-text span::before{
+    content: "MERN";
+    color: greenyellow;
+    text-shadow: 2px 2px 5px rgb(99, 98, 98);
+    animation: words 20s infinite;
+}
+
+#anime-text span::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 10px);
+    background-color: black;
+    height: 100%;
+    border-left: 2px solid rgb(245, 241, 241);
+    right: -8px;
+    animation: cursor 0.8s infinite, typing 25s steps(25) infinite;
+}
+
+@keyframes cursor {
+    to{
+        border-left: 2px solid black;
+    }
+}
+
+@keyframes words{
+    0%,25%{
+        content: "MERN Stack Developer.";
+    }
+    26%,50%{
+        content:"UI/UX Designer.";
+    }
+    51%,75%{
+        content: "Front-end Developer.";
+    }
+    76%,100%{
+        content: "Web Developer.";
+    }
+}
+
+@keyframes typing{
+    10%,30%,50%,70%,90%{
+        width: 0;
+    }
+    5%,20%,40%,60%,80%{
+        width: calc(100% + 10px);
+    }
+}
+
+/*#resumeContainer{
+    background-color: rgba(255, 255, 255, 0.267);
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+#nameContainer{
+    background-color: rgb(7, 20, 44);
+    height: 150px;
+    color: rgb(224, 217, 224);
+}
+#aboutContainer
+{
+    background-color: rgba(255, 255, 255, 0.486);
+    height: 100vh;
+}
+#cardResume{
+    width: 300px;
+    height: 100vh;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: thistle;
+}*/
+
+#aboutFont{
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 5px 40px 7px rgb(133, 132, 132);
+    color: white;
+    margin-bottom: 5px;
+}
+#resumeFont{
+    font-size: 85px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 5px 40px 7px rgb(83, 82, 82);
+    color: white;
+    margin-bottom: 100px;
+}
+#connect,#work{
+    font-size: 85px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 5px 40px 7px rgb(83, 82, 82);
+    color: white;
+    margin-bottom: 100px;
+}
+
+
+#experience,#objective,#education{
+    font-weight: 100;
+    color: white;
+    margin-bottom: 20px;
+}
+
+#expHead{
+    font-weight: 700;
+    color: greenyellow;
+}
+
+.card{
+    box-shadow: 5px 5px 25px greenyellow;
+    margin-right: 20px;
+    text-align: center;
+    height: 350px;
+    width: 350px;
+}
+.card-header{
+    /*background: linear-gradient(to right,rgb(29, 108, 133),rgb(48, 147, 177));*/
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    font-size: 30px;
+}
+#eduContainer{
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.card:hover {
+            transform: scale(1.15);
+            box-shadow: 5px 5px 15px greenyellow;
+            }
+.card {
+            transition: 0.5s ease;
+            cursor: pointer;
+            margin:30px;
+            }
+
+    

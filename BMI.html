@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-in">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI-Calculator</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+       #bmi-icon
+       {
+        width: 100px;
+        height: 100px;
+        border-radius: 100px;
+       }
+       section
+       {
+        background-image: url("../public/images/bmibg.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 90vh;
+        margin: 20px;
+       }
+       #section2{
+        background-color: rgba(255, 255, 255, 0.479);
+        height: 65vh;
+       }
+       #slider
+       {
+        width: 3px;
+        height: 25px;
+        position: absolute;
+        background-color: black;
+        top: 260px;
+       }
+    </style>
+    <script type="text/javascript">
+        function onBtnClick()
+        {
+            var height=parseFloat(document.getElementById("height").value);
+            var weight=parseFloat(document.getElementById("weight").value);
+            var bmi= Math.round(weight/(height*height));
+            var slider= document.getElementById("slider");
+            document.getElementById("bmi-result").style.display="block";
+            document.getElementById("bmi-result").innerHTML= bmi;
+            if(bmi<18.5)
+            {
+               document.getElementById("div1").innerHTML="<h5>Time to grab a bite!</h5>";
+               document.getElementById("div2").innerHTML="By maintaining a healthy weight, you lower your risk of developing serious health problems. "
+               document.getElementById("div2").style.fontSize="15px";
+               document.getElementById("div1").className="text-danger";
+               slider.style.top= 300 +'px';
+               slider.style.right= 320 +'px';
+            }
+            else if(bmi>=18.5 && bmi<=24.9)
+            {
+                document.getElementById("div1").innerHTML="<h5>Great shape!!</h5>";
+                document.getElementById("div2").innerHTML="By maintaining a healthy weight, you lower your risk of developing serious health problems. "
+                document.getElementById("div2").style.fontSize="15px";
+                document.getElementById("div1").className="text-success";
+                slider.style.top= 300 +'px';
+                slider.style.right= 250 +'px';
+            }
+            else if(bmi>=25 && bmi<=29.9)
+            {
+                document.getElementById("div1").innerHTML="<h5>Time to run!</h5>";
+                document.getElementById("div2").innerHTML="By maintaining a healthy weight, you lower your risk of developing serious health problems. "
+                document.getElementById("div2").style.fontSize="15px";
+                document.getElementById("div1").className="text-danger";
+                slider.style.top= 300 +'px';
+                slider.style.right= 170 +'px';
+            }
+            else
+            {
+                document.getElementById("div1").innerHTML="<h5>Time to workout! </h5>";
+                document.getElementById("div2").innerHTML="By maintaining a healthy weight, you lower your risk of developing serious health problems. "
+                document.getElementById("div2").style.fontSize="15px";
+                document.getElementById("div1").className="text-danger";
+                slider.style.top= 300 +'px';
+                slider.style.right= 100 +'px';
+            }
+        }
+       
+    </script>
+    
+</head>
+<body class="container-fluid bg-dark">
+    <section>
+        <header class="d-flex pt-4 ps-4">
+            <div class="me-4">
+                <img src="../public/images/bmiLogo.jpg" id="bmi-icon">
+            </div>
+            <div>
+                <h1 style="color: brown;">BMI Calculator</h1>
+                <div style="color: brown; font-size: 20px;">Body Mass Index</div>
+            </div>
+        </header>
+        <div id="section2" class="d-flex justify-content-between m-4 ps-4 text-black" style="box-shadow: 2px 2px 20px rgb(54, 54, 54);">
+            <div>
+                <div class="row ps-1 pe-1 pt-4">
+                    <div class="col">
+                        <div>Gender</div>
+                        <input class="form-check-input" type="radio" name="Gender"> Male
+                        <input class="form-check-input" type="radio" name="Gender"> Female
+                    </div>
+                    <div class="col">
+                        <div>Age</div>
+                        <input type="text" name="Age" id="age" class="text-end form-control" placeholder="Years">
+                        <span class="ps-1" style="color: rgb(56, 54, 54); font-style: italic; font-size: 12px; font-weight:bold;">Between 2 years to 120 years</span>
+                    </div>
+                </div>
+                <div class="row ps-1 pe-1 mt-4">
+                    <div class="col">
+                        <div>Height</div>
+                        <input class="form-control" type="text" id="height" name="height" size="4" placeholder="in meters [eg:1.66]" style="border: none; border-bottom: 2px solid grey;">
+                    </div>
+                    <div class="col">
+                        <div>Weight</div>
+                        <input class="form-control" type="text" id="weight" name="weight" placeholder="In Kgs">
+                    </div>
+                </div>
+                <div class="col text-center mt-4">
+                    <button onclick="onBtnClick()" class="btn btn-success mt-4" style="width: 200px; border-radius: 20px; font-size: 20px; color: white; font-weight: bold;">Calculate</button>
+                </div>
+            </div>
+            <div class="w-25 mt-4 mb-4 me-4 text-center" style="background-color: rgba(250, 249, 249, 0.555); box-shadow: 2px 2px 5px grey;">
+                <div class="pt-4">
+                    <h5 style="color: brown;">Your BMI is:</h5>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div id="bmi-result" style=" border-radius: 100px; width: 100px; height: 40px; font-weight: bold; background-color: rgb(214, 40, 69); font-size: 25px; display: none; "></div>
+                    </div>
+                </div>
+                <div class="progress position-relative mt-4" style="border-radius: unset; height: 4px; background-color: black">
+                    <div class="progress-bar me-2 ms-2" style="width: 25%;background-color: yellow;"></div>
+                    <div class="progress-bar me-2 bg-success" style="width: 25%;"></div>
+                    <div class="progress-bar me-2 bg-warning" style="width: 25%;"></div>
+                    <div class="progress-bar me-2 bg-danger" style="width: 25%;"></div>
+                </div>
+                <div id="slider"></div>
+                <div id="div1"></div>
+                <div id="div2"></div>
+                <div style="font-style: italic; font-weight: bold; font-size: 15px; color: rgb(24, 173, 10); margin-top: 100px;">
+                    Healthy BMI range: 18.5 kg/m2 - 25 kg/m2
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
