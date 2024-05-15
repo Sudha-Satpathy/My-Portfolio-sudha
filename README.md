@@ -4,3 +4,4 @@
 💞️ I’m looking for opportunity to work in real-time projects
 📫 Reach me: Email Address: sudhasatpathy1222@gmail.com LinkedIn : https://www.linkedin.com/in/sudha-satpathy-12a149282
 😄 Pronouns: She/Her
+https://github.com/Sudha-Satpathy/Sudha-Satpathy-Portfolio/files/15322518/SudhaSatpathy_Resume.pdf
